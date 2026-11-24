@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>哆啦A梦 · Antigravity 秘密基地</title>
+  <link rel="stylesheet" href="/doraemon.css" />
+</head>
+<body>
+  <div id="stage-wrap">
+    <canvas id="office-canvas"></canvas>
+  </div>
+
+  <!-- Anywhere Door Transition Overlay -->
+  <div class="portal-transition" id="portal-overlay">
+    <div class="portal-door-icon">🚪✨</div>
+    <div class="portal-label" id="portal-label">穿过任意门中…</div>
+  </div>
+
+  <div class="hud-layer">
+    <!-- Minimalist Screensaver Clock (auto shown in fullscreen / screensaver) -->
+    <div class="saver-clock" id="saver-clock">
+      <div class="saver-time" id="saver-time">00:00</div>
+      <div class="saver-meta" id="saver-meta">
+        <span>🔔</span>
+        <span id="saver-date">加载中…</span>
+        <span>·</span>
+        <span id="saver-squad">哆啦秘密基地</span>
+      </div>
+    </div>
+
+    <!-- Minimal Top Bar (auto hides in fullscreen screensaver) -->
+    <div class="top-bar hide-in-saver">
+      <div class="left-cluster">
+        <button id="btn-back-hub" class="dora-btn pink hidden" title="返回空地主广场 (Esc)">
+          ⬅️ 返回广场
+        </button>
+
+        <div class="brand-pill">
+          <div class="bell-badge" id="brand-icon">🌳</div>
+          <div>
+            <div class="brand-title" id="brand-title">哆啦A梦 · 秘密空地主广场</div>
+            <div class="brand-sub" id="status-subtitle">点击任意小人，进入他的专属房间</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <button id="btn-switch-room" class="dora-btn hidden" title="切换当前房间的哆啦A梦主题场景">
+          🏠 换间房
+        </button>
+
+        <button id="btn-lighting" class="dora-btn" title="切换晴天 / 夕阳 / 夜晚光影">
+          ☀️
+        </button>
+
+        <button id="btn-fullscreen" class="dora-btn primary" title="全屏屏保模式 (快捷键 F)">
+          🖥️ 全屏屏保
+        </button>
+      </div>
+    </div>
+
+    <!-- Read-only Character Status Card (Inside Room, click character to view) -->
+    <div class="inspector-card hide-in-saver" id="inspector-card">
+      <div class="inspector-header">
+        <img id="insp-avatar" class="inspector-avatar" src="" alt="avatar" />
+        <div>
+          <div class="inspector-name" id="insp-name">-</div>
+          <div class="inspector-role" id="insp-role">-</div>
+        </div>
+        <button class="inspector-close" id="insp-close">✕</button>
+      </div>
+      <div class="inspector-box" id="insp-state">-</div>
+      <div class="inspector-box" id="insp-meta">-</div>
+    </div>
+
+    <!-- Minimal Bottom-Right Live Ticker Only -->
+    <div class="bottom-dock hide-in-saver" style="justify-content: flex-end;">
+      <div class="ticker-card">
+        <div class="ticker-head">
+          <span><span class="live-dot"></span><span id="ticker-title">秘密基地实时动态</span></span>
+          <span id="squad-count">0 个会话</span>
+        </div>
+        <ul class="ticker-list" id="ticker-list">
+          <li>正在连接本地 Antigravity 会话…</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="/doraemon.js"></script>
+</body>
+</html>
